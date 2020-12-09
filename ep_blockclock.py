@@ -37,6 +37,9 @@ def printToDisplay(string, init_display):
     # Draw the text (white) and display the buffer (black)
     draw.text((W, H), string, font = font, align='center', fill=255)
     
+    # Rotate image so device can sit like a clock
+    HBlackImage = HBlackImage.rotate(angle=180)
+
     # Determine if we are doing a full or partial refresh
     global initial_display
     if init_display == True:
