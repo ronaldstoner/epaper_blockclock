@@ -29,6 +29,7 @@ def printToDisplay(string, init_display):
     #print("Max Width: ", epd2in13_V2.EPD_WIDTH)
     #print("Max Height: ", epd2in13_V2.EPD_HEIGHT)  
 
+    # TODO: Make H value dynamic instead of static - hacky
     W = (epd2in13_V2.EPD_WIDTH - h)  
     H = (86 - h)
     #print("Output Width: ", W)
@@ -70,10 +71,12 @@ def getPrice():
     return(str(amount))
 
 if __name__ == '__main__':
-    epd = epd2in13_V2.EPD()     # get the display
-    epd.init(epd.FULL_UPDATE)   # initialize the display
-    print('[STARTUP]   Clearing the display')           # prints to console, not the display, for debugging 
-    epd.Clear(0xFF)             # clear the display and set to white
+    # Get and init display
+    epd = epd2in13_V2.EPD()
+    epd.init(epd.FULL_UPDATE)
+    print('[STARTUP]   Clearing the display') 
+    # Cleat the display and set it to white 
+    epd.Clear(0xFF)
     initial_display = True
 
     while True:
