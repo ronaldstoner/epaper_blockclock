@@ -41,11 +41,12 @@ def printToDisplay(string, init_display):
     global initial_display
     if init_display == True:
         #print(init_display, " - Full Display")
-        epd.display(epd.getbuffer(HBlackImage))
+        epd.displayPartBaseImage(epd.getbuffer(HBlackImage))
+        epd.init(epd.PART_UPDATE)
         initial_display=False
     else:
         #print(init_display, " - Partial Update")
-        epd.display(epd.getbuffer(HBlackImage))
+        epd.displayPartial(epd.getbuffer(HBlackImage))
     
     initial_display=False
     return initial_display
