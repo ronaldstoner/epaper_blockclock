@@ -82,4 +82,4 @@ if __name__ == '__main__':
     while True:
         cur_btcPrice = getPrice()
         printToDisplay(cur_btcPrice, initial_display)
-        time.sleep(60)
+        time.sleep(600)
